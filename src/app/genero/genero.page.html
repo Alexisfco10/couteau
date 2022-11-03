@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Género</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-text>
+      <p>Ingresa un nombre para predecir su género:</p>
+    </ion-text>
+  </ion-item>
+    
+  <ion-item>
+    <ion-input [(ngModel)]="nom" type="text" placeholder="Nombre"></ion-input>
+    <ion-button (click)="predecir()" expand="block" fill="clear" shape="round">
+      Predecir género
+    </ion-button>
+  </ion-item>
+
+  <ion-item>
+    <img class="imagen" src="{{image}}" alt="">
+  </ion-item>
+  
+
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>País</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-text>
+      <p>Ingresa el nombre de un país en inglés para mostrar sus universidades:</p>
+    </ion-text>
+  </ion-item>
+    
+  <ion-item>
+    <ion-input [(ngModel)]="nom" type="text" placeholder="Nombre"></ion-input>
+    
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="universidad()" expand="block" fill="clear" shape="round">
+      Mostrar universidades
+    </ion-button>
+  </ion-item>
+
+  <ion-list>
+    <br>
+    <ion-card *ngFor="let universidad of universidades" >
+      <ion-card-header>
+        <ion-card-subtitle>{{universidad.domains}}</ion-card-subtitle>
+        <ion-card-title>{{universidad.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <a href={{universidad.web_pages}} target="_blank">Link a esta universidad</a>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  
+
+</ion-content>
