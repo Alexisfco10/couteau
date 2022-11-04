@@ -9,4 +9,33 @@
 
 <ion-content>
 
+  <ion-item>
+    <ion-text>
+      <p>Ingresa el nombre una ciudad para mostrar su clima actual:</p>
+    </ion-text>
+  </ion-item>
+    
+  <ion-item>
+    <ion-input [(ngModel)]="ciudad" type="text" placeholder="Nombre"></ion-input>
+    
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="clima()" expand="block" fill="clear" shape="round">
+      Mostrar clima
+    </ion-button>
+  </ion-item>
+
+  <div class="result" *ngIf="resultado">
+    <h1 >Información del clima</h1>
+        <p>City: {{resultado.name}}</p>
+        <p>Latitude: {{resultado.coord.lat}}</p>
+        <p>Longitude: {{resultado.coord.lon}}</p>
+        <p>Humidity: {{resultado.main.humidity}}</p>
+        <p>Pressure: {{resultado.main.pressure}}</p>
+        <p>Temperature: {{resultado.main.temp}} °C</p>
+        <p>Description: {{resultado.weather[0].description }}</p>
+  </div>
+
+  
+
 </ion-content>
